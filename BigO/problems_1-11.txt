@@ -1,0 +1,89 @@
+PROBLEM 1
+
+1. The standup and shout dog playmate search would be constant O-notation.
+Assuming you had sufficient volume to capture the attention of all the guests
+(and people responded as expected) the number of guests will not affect the chances of querying a puppy playmate. 
+
+2. The person by person approach would be linear O-notation. 
+This scenario describes a systematic approach -- that takes additional time with each new person. 
+
+PROBLEM 2
+
+1. The value parameter has no impact on performance.
+This is because it is not iterated over and has a simple conditional statement applied to it. 
+Thus evenOrOdd() also uses constant O-notation.
+
+PROBLEM 3
+
+1. AreYouHere() uses quadratic O-notation for the following reasons:
+In this case, two arrays are looped over -- one nested inside the other and characteristic of polynomial-type O-notations.
+The iteration of the first array, followed by the second, add time to the process.
+Iteration of array 1 * iteration of array 2 -- quadratic as opposed to cubic or linear -- would best describe the time cost of AreYouHere().
+
+PROBLEM 4
+
+1. doubleArrayValues() uses linear O-notation.
+Each iteration of a single array has the same computation applied to it.
+It is only the amount of inputs that would significantly affect the time complexity of this algorithm.
+
+PROBLEM 5
+
+1. naiveSearch() uses linear O-notation.
+The entire array must be iterated over to find the desired item.
+Thus, the size of the array affects the computation time.
+
+PROBLEM 6
+
+1. createPairs() uses quadratic O-notation.
+By using a nested for loop, two arrays must be iterated over.
+Though there is 1 return statement, the first array is still iterated over.
+Additionally, each iteration of the first array is returned inside this return statement.
+The length of both arrays matters.
+With 2 layers of nesting, this function is quadratic -- n^2 -- rather than another type of polynomial.
+
+PROBLEM 7 
+
+1. compute() adds the current number plus the previous two numbers. 
+This describes the fibonacci sequence. 
+However, it uses linear O-notation for the following reasons: 
+Each new iteration is stored in an array data structure and used in the following two iterations of the for loop.
+The 2 base cases have already been described. Following these cases, each successive iteration from the fibonacci sequence array is counted as the sum of the previous two.
+Thus, the number of iterations correlates to the fibonacci sequence position passed in as a parameter.  
+
+PROBLEM 8
+
+1. efficientSearch() would be an example of logarithimic O-notation for the following reasons:
+A single item is sought using this algorithm.
+Each iteration makes the process easier each successive search.
+This is because the function works by descreasing the boundary of uncertainty in an array of numbers.
+A minimum limit is increased, and a maximum limit is decreased,
+until the number is found or all other possibilities have been ruled out.
+
+PROBLEM 9
+
+1. findRandomElement() uses constant O-notation.
+Under the hood, findRandomElement() uses javascript methods that might increase/decrease the time/space complexity.
+However, the array does not have to be iterated over to find the single, random output of this function.
+Thus, constant notation would describe the algorithm, itself.
+
+PROBLEM 10 
+
+1. isWhat() uses linear O-notation.
+Taking an integer as an expected parameter, isWhat() iterates through all numbers from 2 until its parameter. 
+The higher the integer, the higher the numbers of possible iterations.
+A single iteration over 1 paramter takes place.
+
+PROBLEM 11 
+
+A --> B --> C
+
+1. Refer to hanoi.js for the algorithm.
+2. If given 5 discs, the 7th move is: "Disc 1 from Tower A to Tower C."
+3. 3 discs can be hanoi'd in 7 moves.
+   5 discs can be hanoi'd in 31 moves.
+   7 discs can be hanoi'd in 127 moves.
+   12 discs will probably result in your wife leaving you (4095 moves). 
+
+4. Rome wasn't built in a day, but my hanoi tower algorithm worked in an exponential O-notation.
+   2^n - 1, to be exact!
+   
