@@ -1,0 +1,17 @@
+1. Recursive Counting sheep is a low linear time to constant complexity; faster than an iterative approach but occupying the stack.
+2. Recursive Power_calculator is -- with some case-specific margins of error -- constant time complexity.
+   Each time, you perform the same calculation with a constant number of values. 
+3. Recursive reverse string is a constant complexity; faster, but with a possible cost to space.
+   Marginally dependent on the size of the function to Recursively solve.
+   But ideal -- as most people don't need to reverse strings.
+4. Recursive nth triangular is a constant time complexity -- with a higher space complexity. 
+   The same calculation is performed at each function call. 
+5. String splitter is also a constant time complexity.
+   The same calculation is being performed at each function call.
+6. Fibbonachi is an exponential time complexity -- when not memoized. 
+   When memoized, the Fibbonachi is constant, but with a spacial cost nevertheless.
+7. The factorial is a constant time complexity. 
+8. Maze is a constant time complexity in my implementation. Each step is a calculation of similar length.
+9. Maze 2 is also a constant time complexity. 
+10. Anagrams is a linear time complexity. 
+11. Organization chart is a linear time complexity.  

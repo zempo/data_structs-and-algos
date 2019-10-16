@@ -1,1 +1,7 @@
- 
+ 1. Iterative counting sheep is a linear complexity. 
+ 2. Reverse string is a linear complexity. 
+ 3. Nth triangle is a linear complexity.
+ 4. String splitter is a linear complexity. 
+ 5. Iterative fibbonachi is a linear complexity. 
+ 6. Iterative factorial is a linear complexity. 
+ 7. Power calculator is a linear complexity. 

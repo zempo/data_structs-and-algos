@@ -108,4 +108,15 @@ console.log(iteranacchi(2))
 console.log(iteranacchi(7))
 console.log("\n");
 
+function iteratorial(n) {
+    let product = 1
+    for (let i = n; i >= 1; i--) {
+        product *= i
+    }
+    return `The factorial for ${n} is ${product}`
+}
+
+console.log(iteratorial(10))
+
+console.log('\n')
 

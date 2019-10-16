@@ -9,4 +9,6 @@ function countSheep(numberOfSheep) {
   countSheep(numberOfSheep - 1);
 }
 
-countSheep(3);
+console.time()
+countSheep(400);
+console.timeEnd()

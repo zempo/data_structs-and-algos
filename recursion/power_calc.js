@@ -6,5 +6,7 @@ function powerCalc(base, exp) {
 }
 
 powerCalc(10, 2);
-console.log(powerCalc(10, 3));
+console.time()
+console.log(powerCalc(5, 3));
+console.timeEnd()
 console.log(powerCalc(5, -1));

@@ -4,4 +4,6 @@ function revStr(str) {
   return reversed + revStr(str.slice(0, str.length - 1));
 }
 
+console.time()
 console.log(revStr("hello"));
+console.timeEnd()

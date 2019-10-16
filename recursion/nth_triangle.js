@@ -4,4 +4,6 @@ function nthTriangle(sides) {
   return sides + nthTriangle(sides - 1);
 }
 
-console.log(nthTriangle(3), nthTriangle(5));
+console.time()
+console.log(nthTriangle(1500));
+console.timeEnd()
