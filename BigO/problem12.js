@@ -86,3 +86,26 @@ function splitStr(str, separator) {
 
 console.log(splitStr('303-333-3333', '-'));
 console.log("\n");
+
+function iteranacchi(n) {
+    let result = [];
+    for (let i = 1; i <= n; i++) {
+
+        if (i === 1) {
+            result.push(0);
+        }
+        else if (i == 2) {
+            result.push(1);
+        }
+        else {
+            result.push(result[i - 2] + result[i - 3]);
+        }
+    }
+    return result;
+}
+
+console.log(iteranacchi(2))
+console.log(iteranacchi(7))
+console.log("\n");
+
+
