@@ -34,16 +34,15 @@ console.log('\n')
 function revStr(str) {
     if (typeof str === 'string' || typeof str === 'number') {
         let toString = str.toString()
-        // if (toString.length === 0) return ""
-        let reverseChars = []
+        if (toString.length === 0) return ""
+        var reverseChars = []
         for (let i = 0; i < toString.length; i++) {
             reverseChars.unshift(toString[i])
         }
 
-        let reversedStr = reverseChars.join('')
+        var reversedStr = reverseChars.join('')
         console.log(reversedStr)
         return reversedStr
-        // can't figure out how to return this -- yet
     } else {
         return "Can only reverse string or number"
     }
@@ -52,4 +51,6 @@ function revStr(str) {
     // return reversed + revStr(str.slice(0, str.length - 1));
 }
 
-revStr('smile')
+revStr('')
+revStr('hello')
+revStr(34)
