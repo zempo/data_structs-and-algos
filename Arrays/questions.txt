@@ -1,0 +1,21 @@
+////////////////////////////////////////////////////////////////////////
+Question 2: 
+i. length = 1, capacity = 3, and the memory address is 0
+ii. length = 5, capacity = 12, and the memory address is 3 
+     With a size ratio of 3, adding four new elements increases the capacity to 12.
+     We have exceeded the capacity 3 times with these new additions.
+////////////////////////////////////////////////////////////////////////
+Question 3:
+i. length = 2, capacity = 12, and the memory address is 3 
+      We have already allocated memory and exceeded capacity 3 times,
+       so only the length has changed after popping 3 elements.
+//////////////////////////////////////////////////////////////////////////
+Question 4: 
+i. Get the first item in the array: 5 
+ii. Empty and push new item. First item becomes: "NaN"
+    This is because our get function can only retreive integers
+    Sure enough, emptying and only adding a number allows us to retreive the number.
+    However, we know it is the first item in the array, because all other index values 
+    throw an error.
+
+ 
