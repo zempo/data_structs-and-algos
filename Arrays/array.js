@@ -28,5 +28,62 @@ class Array {
     memory.free(oldPtr);
     this._capacity = size;
   }
+
+  get(index) {
+    if (index < 0 || index >= this.length) {
+      throw new Error('Index error');
+    }
+    return memory.get(this.ptr + index);
+  }
+
+  pop() {
+    if (this.length == 0) {
+      throw new Error('Index error');
+    }
+    const value = memory.get(this.ptr + this.length - 1);
+    this.length--;
+    return value;
+  }
+
+  insert(index, value) {
+    if (index < 0 || index >= this.length) {
+      throw new Error('Index error');
+    }
+
+    if (this.length >= this._capacity) {
+      this._resize((this.length + 1) * Array.SIZE_RATIO);
+    }
+
+    memory.copy(this.ptr + index + 1, this.ptr + index, this.length - index);
+    memory.set(this.ptr + index, value);
+    this.length++;
+  }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) {
+      throw new Error('Index error');
+    }
+    memory.copy(this.ptr + index, this.ptr + index + 1, this.length - index - 1);
+    this.length--;
+  }
 }
 Array.SIZE_RATIO = 3;
+
+function main() {
+
+  Array.SIZE_RATIO = 3;
+
+  // Create an instance of the Array class
+  let arr = new Array();
+
+  // Add an item to the array
+  arr.push(5);
+  arr.push(15);
+  arr.push(19);
+  arr.push(45);
+  arr.push(10);
+
+  console.log(arr);
+}
+
+main()
