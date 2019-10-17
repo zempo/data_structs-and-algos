@@ -29,4 +29,9 @@ class Array {
     this._capacity = size;
   }
 }
+
 Array.SIZE_RATIO = 3;
+
+const arr1 = new Array();
+
+console.log(arr1);
