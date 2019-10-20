@@ -18,4 +18,4 @@ ii. Empty and push new item. First item becomes: "NaN"
     However, we know it is the first item in the array, because all other index values 
     throw an error.
 
- 
+Question 5 - 12 (check arrAlgos.js)
