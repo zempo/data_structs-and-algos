@@ -17,7 +17,7 @@ function urlify(inputStr) {
   return output;
 }
 
-console.log("Algo 1: ");
+console.log("Algo 1: Urlify");
 console.log(urlify(input1));
 console.log(urlify(input2));
 console.log("\n");
@@ -66,7 +66,7 @@ function myNumFilter(arr, filterCase, val) {
   }
 }
 
-console.log("Algo 2:");
+console.log("Algo 2: Custom Num Filter");
 console.log(myNumFilter(input3, filterCase, 5));
 // console.log(myNumFilter(input3, "less-equals", 5));
 // console.log(myNumFilter(input3, "equals", 5));
@@ -105,7 +105,7 @@ const maxSequence = (arr) => {
   return result;
 };
 
-console.log("Algo 3:");
+console.log("Algo 3: Maximum Contigous Sum");
 console.log(maxSequence(input4));
 console.log(maxSequence(input5));
 console.log(maxSequence(input6));
@@ -145,7 +145,7 @@ const mergeArrs = (arr1, arr2) => {
   return merged;
 };
 
-console.log("Algo 4:");
+console.log("Algo 4: Merge and Sort Arrays");
 // console.log(mergeArrsClean(input8, input9));
 console.log(mergeArrs(input8, input9));
 console.log("\n");
@@ -187,7 +187,7 @@ const deleteCharsFaster = (str, strToRmv) => {
   return output;
 };
 
-console.log("Algo 5:");
+console.log("Algo 5: Custom Sanitizer");
 console.time();
 console.log(deleteChars(input10, input11));
 console.timeEnd();
@@ -211,7 +211,7 @@ const productOfOthers = (arr) => {
   return output;
 };
 
-console.log("Algo 6:");
+console.log("Algo 6: Product of all others");
 console.log(productOfOthers(input12));
 console.log("\n");
 
