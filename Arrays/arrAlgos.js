@@ -216,3 +216,60 @@ console.log(productOfOthers(input12));
 console.log("\n");
 
 //// Algo 7:
+const input13 = [[1, 0, 1, 1, 0], [0, 1, 1, 1, 0], [1, 1, 1, 1, 1], [1, 0, 1, 1, 1], [1, 1, 1, 1, 1]];
+
+const matrixBullets = (arr) => {
+  let matrix = arr;
+  let matrixRef = { rows: [], columns: [] };
+  // first we'll reference the rows and columns
+  // with a search iterator
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] === 0) {
+        matrixRef.rows.push(i);
+        matrixRef.columns.push(j);
+      }
+    }
+  }
+  console.log(matrixRef);
+  // then we replace the columns
+  for (let col = 0; col < matrixRef.columns.length; col++) {
+    let currentCol = matrixRef.columns[col];
+    for (let i = 0; i < matrix.length; i++) {
+      matrix[i][currentCol] = 0;
+    }
+  }
+  // followed by the rows
+  for (let row = 0; row < matrixRef.rows.length; row++) {
+    let currentRow = matrixRef.rows[row];
+    for (let i = 0; i < matrix.length; i++) {
+      if (i === currentRow) {
+        for (let j = 0; j < matrix[i].length; j++) {
+          matrix[i][j] = 0;
+        }
+      }
+    }
+  }
+  return matrix;
+};
+
+console.log("Algo 7: Matrix Navigator");
+console.log(matrixBullets(input13));
+console.log("\n");
+
+/// ALGO 8: Str Rotation
+let input14 = "amazon";
+let input15 = "azonma";
+let input16 = "azonam";
+
+function checkRotationStrings(string, rotatedString) {
+  let match = false;
+  for (let i = 0; (i < string.length - 1) & !match; i++) {
+    match = rotatedString.substring(i, rotatedString.length) + rotatedString.substring(0, i) === string;
+  }
+  return match;
+}
+
+console.log("Algo 8: String Rotation Checker");
+console.log(checkRotationStrings(input14, input15));
+console.log(checkRotationStrings(input14, input16));
