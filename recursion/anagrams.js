@@ -22,5 +22,5 @@ function gramans(str) {
 }
 
 console.time();
-console.log(gramans("east"));
+console.log(gramans("solomon"));
 console.timeEnd();
