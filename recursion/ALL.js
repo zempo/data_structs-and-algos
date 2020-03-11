@@ -65,3 +65,52 @@ const fastFibbo = optimizeFibbo(fibboSlow);
 console.log("Problem 6: Fibonacci");
 console.log(fastFibbo(7));
 console.log("\n");
+
+const factorial = x => {
+  if (x === 1) return x;
+
+  return x * factorial(x - 1);
+};
+
+console.log("Problem 7: Factorial");
+console.log(factorial(5));
+console.log("\n");
+
+let maze = [
+  [" ", " ", " ", "*", " ", " ", " "],
+  ["*", "*", " ", "*", " ", "*", " "],
+  [" ", " ", " ", " ", " ", " ", " "],
+  [" ", "*", "*", "*", "*", "*", " "],
+  [" ", " ", " ", " ", " ", " ", "e"]
+];
+
+// the maze, x coor, y coor, current path string
+const mazeSolver = (maze, x, y, path = "") => {
+  let mazeCopy = maze.map(arr => [...arr]);
+
+  // can't move any further left, can only go right
+  if (x < mazeCopy[0].length - 1) {
+    // if the spot to the right is clear or the exit
+    if (mazeCopy[y][x + 1] === " " || mazeCopy[y][x + 1] === "e") {
+      // close off the spot
+      mazeCopy[x][y] = "*";
+      // add to the path
+      let newPath = path + "R";
+      // literal exit case
+      if (mazeCopy[y][x + 1] === "e") {
+        console.log(`Path to the exit: ${newPath}`);
+      } else {
+        mazeSolver(mazeCopy, x + 1, y, newPath);
+      }
+    }
+  }
+  // can't move any further right, can only go left
+  if (x > 0) {
+    if (mazeCopy) {
+    }
+  }
+};
+
+console.log("Problem 8: Maze Solver");
+console.log(mazeSolver(maze, 0, 0));
+console.log("\n");
