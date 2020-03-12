@@ -84,6 +84,11 @@ let maze = [
   [" ", " ", " ", " ", " ", " ", "e"]
 ];
 
+let solutions = [];
+const shortestArr = solutions => {
+  return solutions.sort((a, b) => a.length - b.length)[0];
+};
+
 // the maze, x coor, y coor, current path string
 const mazeSolver = (maze, x, y, path = "") => {
   let mazeCopy = maze.map(arr => [...arr]);
@@ -93,11 +98,12 @@ const mazeSolver = (maze, x, y, path = "") => {
     // if the spot to the right is clear or the exit
     if (mazeCopy[y][x + 1] === " " || mazeCopy[y][x + 1] === "e") {
       // close off the spot
-      mazeCopy[x][y] = "*";
+      mazeCopy[y][x] = "*";
       // add to the path
       let newPath = path + "R";
       // literal exit case
       if (mazeCopy[y][x + 1] === "e") {
+        solutions.push(newPath);
         console.log(`Path to the exit: ${newPath}`);
       } else {
         mazeSolver(mazeCopy, x + 1, y, newPath);
@@ -106,11 +112,92 @@ const mazeSolver = (maze, x, y, path = "") => {
   }
   // can't move any further right, can only go left
   if (x > 0) {
-    if (mazeCopy) {
+    if (mazeCopy[y][x - 1] === " " || mazeCopy[y][x - 1] === "e") {
+      // close off the spot
+      mazeCopy[y][x] = "*";
+      // add to the path
+      let newPath = path + "L";
+      // literal exit case
+      if (mazeCopy[y][x - 1] === "e") {
+        solutions.push(newPath);
+        console.log(`Path to the exit: ${newPath}`);
+      } else {
+        mazeSolver(mazeCopy, x - 1, y, newPath);
+      }
     }
   }
+
+  // can't go up any further
+  if (y < mazeCopy.length - 1) {
+    // if the spot below is clear or the exit
+    if (mazeCopy[y + 1][x] === " " || mazeCopy[y + 1][x] === "e") {
+      // close off the spot
+      mazeCopy[y][x] = "*";
+      // add to the path
+      let newPath = path + "D";
+      // literal exit case
+      if (mazeCopy[y + 1][x] === "e") {
+        solutions.push(newPath);
+        console.log(`Path to the exit: ${newPath}`);
+      } else {
+        mazeSolver(mazeCopy, x, y + 1, newPath);
+      }
+    }
+  }
+
+  // can't go down any further
+  if (y > 0) {
+    // if the spot above is clear or the exit
+    if (mazeCopy[y - 1][x] === " " || mazeCopy[y - 1][x] === "e") {
+      // close off the spot
+      mazeCopy[y][x] = "*";
+      // add to the path
+      let newPath = path + "U";
+      // literal exit case
+      if (mazeCopy[y - 1][x] === "e") {
+        solutions.push(newPath);
+        console.log(`Path to the exit: ${newPath}`);
+      } else {
+        mazeSolver(mazeCopy, x, y - 1, newPath);
+      }
+    }
+  }
+
+  return "The Most Efficient Path: " + shortestArr(solutions);
 };
 
 console.log("Problem 8: Maze Solver");
 console.log(mazeSolver(maze, 0, 0));
+console.log("\n");
+
+const anagramsSolver = str => {
+  // if 1 letter or less
+  str.toLowerCase();
+  if (str.length < 2) return str;
+
+  let permutations = [];
+
+  // get the permutations for each original letter
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    // if this permutation has already been found
+    if (str.indexOf(char) != i) {
+      continue;
+    }
+
+    // otherwise...
+    // concat this unique permutation and the rest of the string
+    let remainingStr = str.slice(0, i) + str.slice(i + 1, str.length);
+    // for all other possible arrangements, recursively
+    // at each 'starting point' of the string
+    for (var subPermutation of anagramsSolver(remainingStr)) {
+      permutations.push(char + subPermutation);
+    }
+  }
+
+  return permutations;
+};
+
+console.log("Problem 9: Anagrams");
+console.log(anagramsSolver("east"));
 console.log("\n");
