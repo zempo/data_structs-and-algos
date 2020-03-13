@@ -201,3 +201,74 @@ const anagramsSolver = str => {
 console.log("Problem 9: Anagrams");
 console.log(anagramsSolver("east"));
 console.log("\n");
+
+const members = {
+  Zuckerberg: {
+    Schroepfer: {
+      Bosworth: {
+        Steve: "Steve",
+        Kyle: "Kyle",
+        Andra: "Andra"
+      },
+      Zhao: {
+        Richie: "Richie",
+        Sofia: "Sofia",
+        Jen: "Jen"
+      }
+    },
+    Schrage: {
+      VanDyck: {
+        Sabrina: "Sabrina",
+        Michelle: "Michelle",
+        Josh: "Josh"
+      },
+      Swain: {
+        Blanch: "Blanch",
+        Tom: "Tom",
+        Joe: "Joe"
+      }
+    },
+    Sandberg: {
+      Goler: {
+        Eddie: "Eddie",
+        Julie: "Julie",
+        Annie: "Annie"
+      },
+      Hernandez: {
+        Rowi: "Rowi",
+        Inga: "Inga",
+        Morgan: "Morgan"
+      },
+      Moissinac: {
+        Amy: "Amy",
+        Chuck: "Chuck",
+        Vinni: "Vinni"
+      },
+      Kelley: {
+        Eric: "Eric",
+        Ana: "Ana",
+        Wes: "Wes"
+      }
+    }
+  }
+};
+
+const companyOrganizer = (data, indent = "") => {
+  for (const key in data) {
+    console.log(indent + key);
+    if (typeof data[key] === "object") {
+      companyOrganizer(data[key], indent + "  ");
+    }
+  }
+  return "Org Chart";
+};
+
+console.log("Problem 10: Org Chart");
+console.log(companyOrganizer(members));
+console.log("\n");
+
+const decToBi = x => (x === 0 ? 0 : (x % 2) + 10 * decToBi(Math.floor(x / 2)));
+
+console.log("Problem 11: Org Chart");
+console.log(decToBi(22));
+console.log("\n");
